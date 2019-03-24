@@ -5,6 +5,8 @@ import CreateTodo from './components/create-todo.component';
 import EditTodo from './components/edit-todo.component'
 import TodosList from './components/todos-list.component'
 import logo from './logo.png';
+import './App.css';
+import { Jumbotron, Container } from 'reactstrap';
 
 class App extends Component {
   render() {
@@ -15,23 +17,28 @@ class App extends Component {
             <a className="navbar-brand" href="https://www.linkedin.com/in/harg2018/" target="_blank">
               <img src={logo} width="40" height="40" alt="harg2018 on LinkedIN" />
             </a>
-            <Link to="/" className="navbar-brand">Feel the MERN-App</Link>
+            <Link to="/" className="navbar-brand">HOME</Link>
             <div className="collpase navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">Task's</Link>
+                  <Link to="/" className="nav-link">Tasks</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">Create-A-Task(s)</Link>
+                  <Link to="/create" className="nav-link">Create Task(s)</Link>
                 </li>
               </ul>
             </div>
           </nav>
+          
           <br />
+          
           <Route path="/" exact component={TodosList} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
         </div>
+        <Jumbotron className="Jumbo">
+      
+      </Jumbotron>
       </Router>
 
     );
